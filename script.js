@@ -30,11 +30,12 @@ habitForm.addEventListener('submit', function(e) {
     newHabitInput.value = '';
 });
 
-// Add event listener for preset habit buttons
-document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('add-preset-btn')) {
-        const presetHabit = e.target.previousElementSibling.textContent;
-        addHabitToList(presetHabit);
+// Check if there's a habit to add from the suggested habits page
+window.addEventListener('load', function() {
+    const habitToAdd = localStorage.getItem('habitToAdd');
+    if (habitToAdd) {
+        addHabitToList(habitToAdd);
+        localStorage.removeItem('habitToAdd');
     }
 });
 
