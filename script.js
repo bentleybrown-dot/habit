@@ -3,6 +3,17 @@ const habitList = document.getElementById('habits');
 const habitForm = document.getElementById('habit-form');
 const newHabitInput = document.getElementById('new-habit');
 
+// Function to add a habit to the list
+function addHabitToList(habitText) {
+    const li = document.createElement('li');
+    li.innerHTML = `
+        <input type="checkbox" class="habit-checkbox">
+        <span>${habitText}</span>
+        <button class="delete-btn">Delete</button>
+    `;
+    habitList.appendChild(li);
+}
+
 // Add event listener for adding a new habit
 habitForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -13,17 +24,18 @@ habitForm.addEventListener('submit', function(e) {
         return;
     }
 
-    // Create new habit item (BUG: Missing functionality here)
-    const li = document.createElement('li');
-    li.innerHTML = `
-        <input type="checkbox" class="habit-checkbox">
-        <span>${newHabit}</span>
-        <button class="delete-btn">Delete</button>
-    `;
-    habitList.appendChild(li);
+    addHabitToList(newHabit);
 
-    // Clear input field (BUG: This doesn't work)
+    // Clear input field
     newHabitInput.value = '';
+});
+
+// Add event listener for preset habit buttons
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('add-preset-btn')) {
+        const presetHabit = e.target.previousElementSibling.textContent;
+        addHabitToList(presetHabit);
+    }
 });
 
 // Add event listener for marking habits as complete
