@@ -3,6 +3,17 @@ const habitList = document.getElementById('habits');
 const habitForm = document.getElementById('habit-form');
 const newHabitInput = document.getElementById('new-habit');
 
+// Function to add a habit to the list
+function addHabitToList(habitText) {
+    const li = document.createElement('li');
+    li.innerHTML = `
+        <input type="checkbox" class="habit-checkbox">
+        <span>${habitText}</span>
+        <button class="delete-btn">Delete</button>
+    `;
+    habitList.appendChild(li);
+}
+
 // Add event listener for adding a new habit
 habitForm.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -13,17 +24,19 @@ habitForm.addEventListener('submit', function(e) {
         return;
     }
 
-    // Create new habit item (BUG: Missing functionality here)
-    const li = document.createElement('li');
-    li.innerHTML = `
-        <input type="checkbox" class="habit-checkbox">
-        <span>${newHabit}</span>
-        <button class="delete-btn">Delete</button>
-    `;
-    habitList.appendChild(li);
+    addHabitToList(newHabit);
 
-    // Clear input field (BUG: This doesn't work)
+    // Clear input field
     newHabitInput.value = '';
+});
+
+// Check if there's a habit to add from the suggested habits page
+window.addEventListener('load', function() {
+    const habitToAdd = localStorage.getItem('habitToAdd');
+    if (habitToAdd) {
+        addHabitToList(habitToAdd);
+        localStorage.removeItem('habitToAdd');
+    }
 });
 
 // Add event listener for marking habits as complete
@@ -45,6 +58,10 @@ habitList.addEventListener('change', function(e) {
 habitList.addEventListener('click', function(e) {
     if (e.target.classList.contains('delete-btn')) {
         const li = e.target.parentElement;
-        habitList.removeChild(li); // BUG: Doesn't delete properly
+        const habitText = li.querySelector('span').textContent;
+        
+        if (confirm(`Are you sure you want to delete "${habitText}"?`)) {
+            habitList.removeChild(li);
+        }
     }
 });
