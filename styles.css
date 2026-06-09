@@ -110,7 +110,7 @@ li {
     flex: 1;
     padding: 0.5rem;
     margin-right: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #0eba33;
     border-radius: 4px;
 }
 
@@ -197,4 +197,127 @@ button {
 
 #carousel-add-btn:hover {
     background-color: #45a049;
+}
+
+/* Welcome Page Styles */
+.welcome-main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.welcome-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+.welcome-section h2 {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-section > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.welcome-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.welcome-card {
+    background: linear-gradient(135deg, #f0f8ff, #e6f2ff);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #4CAF50;
+}
+
+.welcome-card h3 {
+    color: #4CAF50;
+    margin-top: 0;
+}
+
+.welcome-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.welcome-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: #FFEB3B;
+    color: #333;
+    border: 2px solid #4CAF50;
+}
+
+.btn-secondary:hover {
+    background-color: #fdd835;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-tips {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+.welcome-tips h3 {
+    color: #4CAF50;
+    margin-top: 0;
+}
+
+.welcome-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.welcome-tips li {
+    padding: 0.75rem 0;
+    color: #555;
+    line-height: 1.6;
+    border-bottom: 1px solid #eee;
+}
+
+.welcome-tips li:last-child {
+    border-bottom: none;
 }
