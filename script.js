@@ -57,6 +57,10 @@ habitList.addEventListener('change', function(e) {
 habitList.addEventListener('click', function(e) {
     if (e.target.classList.contains('delete-btn')) {
         const li = e.target.parentElement;
-        habitList.removeChild(li); // BUG: Doesn't delete properly
+        const habitText = li.querySelector('span').textContent;
+        
+        if (confirm(`Are you sure you want to delete "${habitText}"?`)) {
+            habitList.removeChild(li);
+        }
     }
 });
