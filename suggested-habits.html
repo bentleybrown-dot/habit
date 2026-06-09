@@ -22,87 +22,39 @@
     <main>
         <section id="preset-habits">
             <h2>Suggested Habits</h2>
-            <div class="preset-habits-container">
-                <div class="preset-habit">
-                    <span>Make your bed every morning</span>
-                    <button class="add-preset-btn">Add</button>
+            <div class="carousel-container">
+                <div class="carousel-display">
+                    <span id="habit-text"></span>
+                    <button id="carousel-add-btn" class="add-preset-btn">Add</button>
                 </div>
-                <div class="preset-habit">
-                    <span>Drink water when you wake up</span>
-                    <button class="add-preset-btn">Add</button>
+                <div class="carousel-nav">
+                    <button id="prev-btn" class="nav-btn">❮</button>
+                    <span id="habit-counter"></span>
+                    <button id="next-btn" class="nav-btn">❯</button>
                 </div>
-                <div class="preset-habit">
-                    <span>Get 8–9 hours of sleep each night</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Exercise regularly</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Eat fruits and vegetables daily</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Read for at least 15–20 minutes a day</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Keep a consistent study schedule</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Finish homework before relaxing or gaming</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Set goals for the day each morning</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Limit unnecessary screen time</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Practice good posture</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Keep your room and workspace organized</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Brush and floss your teeth every day</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Write down things you're grateful for</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Listen carefully when others are speaking</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Save a portion of any money you receive</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Arrive on time for school, work, or activities</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Learn something new each day</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Take breaks during long study sessions</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
-                <div class="preset-habit">
-                    <span>Reflection on the day before bed</span>
-                    <button class="add-preset-btn">Add</button>
-                </div>
+            </div>
+            <!-- Hidden data container for all habits -->
+            <div id="habits-data" style="display:none;">
+                <div class="habit-item">Make your bed every morning</div>
+                <div class="habit-item">Drink water when you wake up</div>
+                <div class="habit-item">Get 8–9 hours of sleep each night</div>
+                <div class="habit-item">Exercise regularly</div>
+                <div class="habit-item">Eat fruits and vegetables daily</div>
+                <div class="habit-item">Read for at least 15–20 minutes a day</div>
+                <div class="habit-item">Keep a consistent study schedule</div>
+                <div class="habit-item">Finish homework before relaxing or gaming</div>
+                <div class="habit-item">Set goals for the day each morning</div>
+                <div class="habit-item">Limit unnecessary screen time</div>
+                <div class="habit-item">Practice good posture</div>
+                <div class="habit-item">Keep your room and workspace organized</div>
+                <div class="habit-item">Brush and floss your teeth every day</div>
+                <div class="habit-item">Write down things you're grateful for</div>
+                <div class="habit-item">Listen carefully when others are speaking</div>
+                <div class="habit-item">Save a portion of any money you receive</div>
+                <div class="habit-item">Arrive on time for school, work, or activities</div>
+                <div class="habit-item">Learn something new each day</div>
+                <div class="habit-item">Take breaks during long study sessions</div>
+                <div class="habit-item">Reflection on the day before bed</div>
             </div>
         </section>
     </main>
